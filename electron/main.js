@@ -127,8 +127,8 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1100,
-    height: 800,
+   // width: 1100,
+   // height: 800,
     backgroundColor: "#f5f5f7",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
@@ -136,9 +136,9 @@ function createWindow() {
       nodeIntegration: false,
     },
   });
-
+  mainWindow.maximize(); 
   mainWindow.loadURL("http://localhost:5173"); // Vite React app
-  mainWindow.webContents.openDevTools();
+ // mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {

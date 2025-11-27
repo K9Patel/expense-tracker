@@ -30,6 +30,7 @@ const styles = {
   container: {
     display: "flex",
     minHeight: "100vh",
+    width: "100vw",
     background: "#f5f5f7",
     fontFamily: "system-ui",
   },
@@ -37,7 +38,7 @@ const styles = {
     width: "240px",
     padding: "24px",
     background: "white",
-    boxShadow: "4px 0 14px rgba(0,0,0,0.1)",
+    boxShadow: "4px 0 14px rgba(0,0,0,0.1)", 
   },
   logo: {
     marginBottom: "20px",
