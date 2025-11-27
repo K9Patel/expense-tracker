@@ -130,6 +130,7 @@ function createWindow() {
    // width: 1100,
    // height: 800,
     backgroundColor: "#f5f5f7",
+    icon: path.join(__dirname,"../src/assets/icon.ico"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
@@ -137,8 +138,12 @@ function createWindow() {
     },
   });
   mainWindow.maximize(); 
-  mainWindow.loadURL("http://localhost:5173"); // Vite React app
- // mainWindow.webContents.openDevTools();
+  if (app.isPackaged) {
+    mainWindow.loadFile(path.join(__dirname, "../dist/index.html"));
+  } else {
+    mainWindow.loadURL("http://localhost:5173");
+    mainWindow.webContents.openDevTools();
+  }
 }
 
 app.whenReady().then(() => {
